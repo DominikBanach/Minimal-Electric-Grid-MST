@@ -1,9 +1,10 @@
 class KruskalMSTBuilder():
 
-    def __init__(self, v, edges):
-        self.v = v
+    def __init__(self, vertices, edges):
+        self.vertices = vertices
         self.edges = sorted(self.edges, key=lambda edge: edge[2])
         self.MST = []
+        self.parent = []
 
     def makeset(self, x):
         pass
