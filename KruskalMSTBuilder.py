@@ -2,7 +2,7 @@ class KruskalMSTBuilder():
 
     def __init__(self, vertices, edges):
         self.vertices = vertices
-        self.edges = sorted(self.edges, key=lambda edge: edge[2])
+        self.edges = edges
         self.MST = []
         self.parent = []
 
