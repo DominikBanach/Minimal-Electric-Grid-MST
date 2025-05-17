@@ -6,10 +6,28 @@ class InputParser():
         return n, self.sortEdges(allEdges) 
 
     def sortEdges(self, edges):
-        # DO ZMIANY DLA KUBY
-        # TODO: zaimplementować własne sortowanie które będzie najbardziej pasowało do zadania???
-        return sorted(edges, key=lambda edge: edge[2]) # sortowanie musi być według wag według wag
+        def merge_sort(arr):
+            if len(arr) <= 1:
+                return arr
+            mid = len(arr) // 2
+            left = merge_sort(arr[:mid])
+            right = merge_sort(arr[mid:])
 
+            merged = []
+            i = j = 0
+
+            while i < len(left) and j < len(right):
+                if left[i][2] <= right[j][2]:
+                    merged.append(left[i])
+                    i += 1
+                else:
+                    merged.append(right[j])
+                    j += 1
+
+            merged.extend(left[i:])
+            merged.extend(right[j:])
+            return merged
+        return merge_sort(edges)
     def parseInputFileIntoNumberOfVerticesAndEdgesList(self, path):
         with open(path) as f:
 
