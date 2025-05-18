@@ -2,7 +2,8 @@ from InputParser import InputParser
 from KruskalMSTBuilder import KruskalMSTBuilder
 from Visualizer import Visualizer
 
-PATHS = [f"inputExamples/inputExample{i}.txt" for i in range(8)]
+NUMBER_OF_EXAMPLES = 8
+PATHS = [f"inputExamples/inputExample{i}.txt" for i in range(NUMBER_OF_EXAMPLES)]
 
 if __name__ == "__main__":
 
